@@ -1,0 +1,9 @@
+<div *ngIf="conferencia" class="card">
+  <div classs="card-top">
+  </div>
+  <div class="card-body">
+      <h5>{{ conferencia.starts }} -  {{conferencia.ends}}, {{conferencia.venue}} </h5>
+      <h5>{{conferencia.name}}</h5>
+      <p class="card-text" style="text-align: justify;">{{ conferencia.description }}</p>
+  </div>
+</div>

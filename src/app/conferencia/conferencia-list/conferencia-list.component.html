@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <h1>Upcoming conferences</h1>
+  <div class="row">
+    <!-- Columna de la tabla -->
+    <div class="col-md-8">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Starting date</th>
+            <th>Ending date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let conferencia of conferencias" (click)="onSelect(conferencia)" style="cursor: pointer;">
+            <td>{{ conferencia.id }}</td>
+            <td>{{ conferencia.name }}</td>
+            <td>{{ conferencia.starts }}</td>
+            <td>{{ conferencia.ends }}</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <p>Upcoming conferences: {{upcoming}}</p>
+    </div>
+
+    <!-- Columna del detalle -->
+    <div class="col-md-4">
+      <app-conferencia-detail *ngIf="selectedConferencia" [conferencia]="selectedConferencia"></app-conferencia-detail>
+    </div>
+  </div>
+</div>
